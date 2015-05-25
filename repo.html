@@ -1,0 +1,24 @@
+
+<div>
+
+    <div>Repo Name: {{repo.name}}</div>
+    <div>Owner Login: {{repo.owner.login}}</div>
+
+    <table>
+        <thead>
+        <th>Image</th>
+        <th>Login Id</th>
+        <th>Type</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="contributor in contributors">
+            <td><img src="{{contributor.avatar_url}}"></td>
+            <td>{{contributor.login}}</td>
+            <td>{{contributor.type}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="#main">Back to search</a>
+    {{error}}
+
+</div>

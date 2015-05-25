@@ -25,6 +25,12 @@
             $location.path("/user/" + username);
         }
 
+        $scope.showRepo = function (repoId) { // scope is key here. It means it is the model
+            $location.path("/repo/" + repoId);
+        }
+
+
+
         $scope.username = 'angular';
         $scope.countdown = 5;
         startCountdown();

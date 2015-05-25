@@ -25,7 +25,7 @@
         </thead>
         <tbody>
         <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
-            <td>{{repo.name}}</td>
+            <td><a href="" ng-href="#repo/{{user.login}}/{{repo.name}}">{{repo.name}}</a></td>
             <td>{{repo.stargazers_count | number}}</td>
             <td>{{repo.language}}</td>
         </tr>
