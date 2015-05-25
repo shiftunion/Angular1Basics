@@ -10,7 +10,7 @@
         <th>Type</th>
         </thead>
         <tbody>
-        <tr ng-repeat="contributor in contributors">
+        <tr ng-repeat="contributor in repo.contributors">
             <td><img src="{{contributor.avatar_url}}"></td>
             <td>{{contributor.login}}</td>
             <td>{{contributor.type}}</td>

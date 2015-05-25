@@ -14,28 +14,25 @@
                 })
         }
 
-        var getContributors = function (repo) {
-            return $http.get(repo.contributors_url)
+        var getContributors = function (user, repoName) { // chained promises... nice!
+            var repo;
+            var repoUrl = 'https://api.github.com/repos/' + user + '/' + repoName;
+            return $http.get(repoUrl)
                 .then(function (response) {
-                    return response.data;
+                    repo = response.data;
+                    return $http.get(repo.contributors_url);
                 })
-        }
-
-        var getRepo = function (user, repoName) {
-            return $http.get('https://api.github.com/repos/' + user + '/' + repoName)
                 .then(function (response) {
-                    return response.data;
-                })
-        }
+                    repo.contributors = response.data;
+                    return repo;
+                });
+        };
 
 
         return {
             getUser: getUser,
             getRepos: getRepos,
             getContributors: getContributors,
-            getRepo: getRepo
-
-
         };
     }
 
