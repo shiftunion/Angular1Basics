@@ -30,12 +30,10 @@
         }
 
 
-
         $scope.username = 'angular';
         $scope.countdown = 5;
         startCountdown();
     }
-
 
 
     app.controller("MainController", MainController);

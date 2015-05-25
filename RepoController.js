@@ -10,7 +10,6 @@
         //$scope.contributors = github.getContributors($scope.repo)
 
 
-
         var onRepoComplete = function (data) {
             $scope.repo = data;
             github.getContributors($scope.repo).then(onContrib, onError)
@@ -28,9 +27,6 @@
 
 
         github.getRepo($routeParams.username, $routeParams.reponame).then(onRepoComplete, onError)
-
-
-
 
 
     }
