@@ -2,13 +2,7 @@
 
     var app = angular.module("githubViewer");
 
-    var RepoController = function ($scope, $location, github, $routeParams) {
-
-
-        //$scope.repo = github.getRepo($routeParams.username, $routeParams.reponame)
-        //
-        //$scope.contributors = github.getContributors($scope.repo)
-
+    var RepoController = function ($scope, github, $routeParams) {
 
         var onRepoComplete = function (data) {
             $scope.repo = data;
@@ -28,9 +22,7 @@
 
         github.getRepo($routeParams.username, $routeParams.reponame).then(onRepoComplete, onError)
 
-
     }
-
 
     app.controller("RepoController", RepoController);
 
