@@ -1,4 +1,4 @@
-(function () {  //IIFE This removes global scope
+(function () {  //IIFE This removes global scope - which is awsesom... how crap is JS
 
     var app = angular.module("githubViewer");
 
